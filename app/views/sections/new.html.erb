@@ -1,0 +1,41 @@
+<nav class="navbar navbar-light bg-faded">
+  <h4>Sections New</h4>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+
+<div class="row">
+  <h4>Create a Page</h4>
+
+<%= form_for(:section, :url => {:action => 'create'}) do |f| %>
+  <fieldset class="form-group">
+    <%= label_tag(:page_id, "Page ID:") %>
+    <%= f.text_field(:page_id, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:name, "Name:") %>
+    <%= f.text_field(:name, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:position, "Position:") %>
+    <%= f.text_field(:position, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:visible, "Visible:") %>
+    <%= f.text_field(:visible, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:content_type, "Content Type:") %>
+    <%= f.text_field(:content_type, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:content, "Content:") %>
+    <%= f.text_area(:content, class: 'form-control') %>
+  </fieldset>
+    <%= submit_tag("Create Section", class: "btn btn-primary")%>
+<% end %>
+
+</div>

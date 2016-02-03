@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-faded">
+  <h4>Delete Section</h4>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+
+<div class="row">
+  <h4>Delete Section</h4>
+
+<%= form_for(:page, :url => {:action => 'destroy', :id => @section.id }) do |f| %>
+  <p>Are you sure you want to permanently delete this section?</p>
+  <p><%= @section.name %></p>
+  <fieldset class="form-group">
+       <%= submit_tag("Section Page", class: "btn btn-danger")%>
+   </fieldset>
+
+<% end %>
+
+</div>

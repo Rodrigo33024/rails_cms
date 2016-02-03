@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-faded">
+  <h3>Sections</h3>
+</nav>
+
+<div>
+  <%= link_to("Add New Section", {:action => 'new'}, :class => "btn btn-secondary action new") %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Visible</th>
+      <th>Content Type</th>
+      <th>Content</th>
+      <th></th>
+      <th>Actions</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sections.each do |section| %>
+        <tr>
+          <th scope="row"><%= section.name %></th>
+          <td><%= section.position %></td>
+          <td><%= section.visible %></td>
+          <td><%= section.content_type %></td>
+          <td><%= section.content %></td>
+          <td><%= link_to("Show", {:action => 'show', :id => section.id}, :class => "action show") %></td>
+          <td><%= link_to("Edit", {:action => 'edit', :id => section.id}, :class => "action edit") %></td>
+          <td><%= link_to("Delete", {:action => 'delete', :id => section.id}, :class => "action delete") %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- name: "Section One",
+position: 1,
+visible: false,
+content_type: nil,
+content: nil,
+created_at: "2016-02-02 20:09:24",
+updated_at: "2016-02-02 20:09:24" -->

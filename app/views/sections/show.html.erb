@@ -1,0 +1,29 @@
+<h1>Section show</h1>
+<div>
+  <%= link_to("<< Back to List", {:action => 'index'}, :class => "btn btn-secondary action new") %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Visible</th>
+      <th>Content Type</th>
+      <th>Content</th>
+      <th>Created</th>
+      <th>Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr>
+          <th scope="row"><%= @section.name %></th>
+          <td><%= @section.position %></td>
+          <td><%= @section.visible %></td>
+          <td><%= @section.content_type %></td>
+          <td><%= @section.content %></td>
+          <td><%= @section.created_at %></td>
+          <td><%= @section.updated_at %></td>
+        </tr>
+  </tbody>
+</table>
