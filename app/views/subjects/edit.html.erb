@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-faded">
+  <h4>Subjects Edit</h4>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+
+<div class="row">
+  <h4>Update Subject</h4>
+
+<%= form_for(:subject, :url => {:action => 'update', :id => @subject.id }) do |f| %>
+ <fieldset class="form-group">
+    <%= label_tag(:name, "Name:") %>
+    <%= f.text_field(:name, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:position, "Position:") %>
+    <%= f.text_field(:position, class: 'form-control') %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= label_tag(:name, "Visible:") %>
+    <%= f.text_field(:visible, class: 'form-control') %>
+  </fieldset>
+  <%= submit_tag("Update Subject", class: "btn btn-primary")%>
+<% end %>
+
+</div>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-faded">
+  <h1>Subjects show</h1>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+<div class="row">
+  <div class="col-md-2">Subject</div>
+  <div class="col-md-1">Position</div>
+  <div class="col-md-2">Visible</div>
+  <div class="col-md-1">Size</div>
+  <div class="col-md-3">Created At</div>
+  <div class="col-md-3">Updated At</div>
+
+  <div class="col-md-2"><%= @subject.name %></div>
+  <div class="col-md-1"><%= @subject.position %></div>
+  <div class="col-md-2"><%= @subject.visible ? 'true' : 'false'%></div>
+  <div class="col-md-1"><%= @subject.pages.size %></div>
+  <div class="col-md-3"><%= @subject.created_at %></div>
+  <div class="col-md-3"><%= @subject.updated_at %></div>
+</div>
