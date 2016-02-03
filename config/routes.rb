@@ -1,19 +1,35 @@
 Rails.application.routes.draw do
-  get 'pages/index'
+  get 'sections/index'
 
-  get 'pages/show'
+  get 'sections/show'
 
-  get 'pages/new'
+  get 'sections/new'
 
-  get 'pages/create'
+  get 'sections/create'
 
-  get 'pages/edit'
+  get 'sections/edit'
 
-  get 'pages/update'
+  get 'sections/update'
 
-  get 'pages/delete'
+  get 'sections/delete'
 
-  get 'pages/destroy'
+  get 'sections/destroy'
+
+  # get 'pages/index'
+  #
+  # get 'pages/show'
+  #
+  # get 'pages/new'
+  #
+  # get 'pages/create'
+  #
+  # get 'pages/edit'
+  #
+  # get 'pages/update'
+  #
+  # get 'pages/delete'
+  #
+  # get 'pages/destroy'
 
   # get 'subjects/index'
   #

@@ -1,0 +1,27 @@
+<h1>Pages show</h1>
+<div>
+  <%= link_to("<< Back to List", {:action => 'index'}, :class => "btn btn-secondary action new") %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Visible</th>
+      <th>Permalink</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th scope="row"><%= @page.name %></th>
+        <td><%= @page.position %></td>
+        <td><%= @page.visible %></td>
+        <td><%= @page.permalink %></td>
+        <td><%= @page.created_at %></td>
+        <td><%= @page.updated_at %></td>
+      </tr>
+  </tbody>
+</table>
