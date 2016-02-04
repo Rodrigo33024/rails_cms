@@ -1,3 +1,4 @@
+<% @page_title = 'Subjects' %>
 <nav class="navbar navbar-light bg-faded">
   <h3>Subjects</h3>
 </nav>
@@ -5,17 +6,36 @@
 <div>
   <%= link_to("Add New Subject", {:action => 'new'}, :class => "btn btn-secondary action new") %>
 </div>
-<div><%= pluralize(@subjects.size, 'Subject') %> found</div>
-<div class="row">
-<% @subjects.each do |sub| %>
 
-  <div class="col-sm-4"><%= sub.name %></div>
-  <div class="col-sm-1"><%= sub.position %></div>
-  <div class="col-sm-2"><%= status_tag(sub.visible) %></div>
-  <div class="col-sm-2"><%= sub.pages.size %></div>
-  <div class="col-sm-1"><%= link_to("Show", {:action => 'show', :id => sub.id}, :class => "action show") %></div>
-  <div class="col-sm-1"><%= link_to("Edit", {:action => 'edit', :id => sub.id}, :class => "action edit") %></div>
-  <div class="col-sm-1"><%= link_to("Delete", {:action => 'delete', :id => sub.id}, :class => "action delete") %></div>
-
-<% end %>
+<div class="card card-inverse card-primary text-xs-center">
+  <div class="card-block">
+    <div class="card-blockquote"><%= pluralize(@subjects.size, 'Subject') %> found</div>
+  </div>
 </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Visible</th>
+      <th>Page Size</th>
+      <th></th>
+      <th>Actions</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subjects.each do |subject| %>
+        <tr>
+          <th scope="row"><%= subject.name %></th>
+          <td><%= subject.position %></td>
+          <td><%= status_tag(subject.visible) %></td>
+          <td><%= subject.pages.size %></td>
+          <td><%= link_to("Show", {:action => 'show', :id => subject.id}, :class => "action show") %></td>
+          <td><%= link_to("Edit", {:action => 'edit', :id => subject.id}, :class => "action edit") %></td>
+          <td><%= link_to("Delete", {:action => 'delete', :id => subject.id}, :class => "action delete") %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
