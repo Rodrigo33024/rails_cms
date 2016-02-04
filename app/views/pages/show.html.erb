@@ -6,7 +6,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Subject ID</th>
+      <th>Subject</th>
       <th>Name</th>
       <th>Position</th>
       <th>Visible</th>
@@ -17,7 +17,7 @@
   </thead>
   <tbody>
       <tr>
-        <td><%= @page.subject_id%></td>
+        <td><%= @page.subject.name if @page.subject %></td>
         <th scope="row"><%= @page.name %></th>
         <td><%= @page.position %></td>
         <td><%= @page.visible %></td>
