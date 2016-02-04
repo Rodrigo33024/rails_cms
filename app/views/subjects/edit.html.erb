@@ -11,7 +11,7 @@
   <h4>Update Subject</h4>
 
 <%= form_for(:subject, :url => {:action => 'update', :id => @subject.id }) do |f| %>
-   <%= render(:partial =>"form", :locals => {:f => f}) %>
+  <%= render(:partial =>"form", :locals => {:f => f}) %>
   <%= submit_tag("Update Subject", class: "btn btn-primary")%>
 <% end %>
 
