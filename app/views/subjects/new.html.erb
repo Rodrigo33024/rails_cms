@@ -11,18 +11,7 @@
   <h4>Create Subject</h4>
 
 <%= form_for(:subject, :url => {:action => 'create'}) do |f| %>
- <fieldset class="form-group">
-  <%= label_tag(:name, "Name:") %>
-  <%= f.text_field(:name, class: 'form-control') %>
-</fieldset>
-<fieldset class="form-group">
-  <%= label_tag(:position, "Position:") %>
-  <%= f.text_field(:position, class: 'form-control') %>
-</fieldset>
-<fieldset class="form-group">
-  <%= label_tag(:name, "Visible:") %>
-  <%= f.text_field(:visible, class: 'form-control') %>
-</fieldset>
+   <%= render(:partial =>"form", :locals => {:f => f}) %>
   <%= submit_tag("Create Subject", class: "btn btn-primary")%>
 <% end %>
 

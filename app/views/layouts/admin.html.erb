@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Rails CMS <%= @page_title || 'Admin' %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+  <% if !flash[:notice].blank? %>
+   <div class="alert">
+     <%= flash[:notice] %>
+   </div>
+  <% end %>
+<%= yield %>
+</div>
+<footer>
+  <p class="text-center">Admin</p>
+</footer>
+</body>
+</html>

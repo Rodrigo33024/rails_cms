@@ -23,7 +23,7 @@
         <tr>
           <th scope="row"><%= sub.name %></th>
           <td><%= sub.position %></td>
-          <td><%= sub.visible %></td>
+          <td><%= status_tag(sub.visible) %></td>
           <td><%= sub.permalink %></td>
           <td><%= link_to("Show", {:action => 'show', :id => sub.id}, :class => "action show") %></td>
           <td><%= link_to("Edit", {:action => 'edit', :id => sub.id}, :class => "action edit") %></td>

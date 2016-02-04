@@ -5,13 +5,13 @@
 <div>
   <%= link_to("Add New Subject", {:action => 'new'}, :class => "btn btn-secondary action new") %>
 </div>
-
+<div><%= pluralize(@subjects.size, 'Subject') %> found</div>
 <div class="row">
 <% @subjects.each do |sub| %>
 
   <div class="col-sm-4"><%= sub.name %></div>
   <div class="col-sm-1"><%= sub.position %></div>
-  <div class="col-sm-2"><%= sub.visible %></div>
+  <div class="col-sm-2"><%= status_tag(sub.visible) %></div>
   <div class="col-sm-2"><%= sub.pages.size %></div>
   <div class="col-sm-1"><%= link_to("Show", {:action => 'show', :id => sub.id}, :class => "action show") %></div>
   <div class="col-sm-1"><%= link_to("Edit", {:action => 'edit', :id => sub.id}, :class => "action edit") %></div>
