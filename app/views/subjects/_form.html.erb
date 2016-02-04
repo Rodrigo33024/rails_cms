@@ -4,7 +4,7 @@
  </fieldset>
  <fieldset class="form-group">
    <%= f.label(:position, "Position:") %>
-   <%= f.text_field(:position, class: 'form-control') %>
+   <%= f.select(:position,1..@subject_count, class: 'form-control') %>
  </fieldset>
  <fieldset class="form-group">
    <%= f.label(:visible, "Visible:") %>

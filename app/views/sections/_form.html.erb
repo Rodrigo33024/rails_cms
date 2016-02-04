@@ -16,9 +16,10 @@
 </fieldset>
 <fieldset class="form-group">
   <%= f.label(:content_type, "Content Type:") %>
-  <%= f.text_field(:content_type, class: 'form-control') %>
+  <%= f.radio_button(:content_type, 'text') %> Text
+  <%= f.radio_button(:content_type, 'HTML') %> HTML
 </fieldset>
 <fieldset class="form-group">
   <%= f.label(:content, "Content:") %>
-  <%= f.text_area(:content, class: 'form-control') %>
+  <%= f.text_area(:content, class: 'form-control', :size => '40x10') %>
 </fieldset>

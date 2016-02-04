@@ -1,6 +1,6 @@
 <fieldset class="form-group">
-  <%= f.label(:subject_id, "Subject ID:") %>
-  <%= f.text_field(:subject_id, class: 'form-control') %>
+  <%= f.label(:subject_id, "Subject:") %>
+  <%= f.select(:subject_id, @subjects.map {|s| [s.name, s.id]}, class: 'form-control') %>
 </fieldset>
 <fieldset class="form-group">
   <%= f.label(:name, "Name:") %>
@@ -12,7 +12,7 @@
 </fieldset>
 <fieldset class="form-group">
   <%= f.label(:position, "Position:") %>
-  <%= f.text_field(:position, class: 'form-control') %>
+  <%= f.select(:position, 1..@page_count, class: 'form-control') %>
 </fieldset>
 <fieldset class="form-group">
   <%= f.label(:visible, "Visible:") %>

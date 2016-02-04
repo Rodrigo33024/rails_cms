@@ -9,6 +9,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Subject</th>
       <th>Name</th>
       <th>Position</th>
       <th>Visible</th>
@@ -19,15 +20,16 @@
     </tr>
   </thead>
   <tbody>
-    <% @pages.each do |sub| %>
+    <% @pages.each do |page| %>
         <tr>
-          <th scope="row"><%= sub.name %></th>
-          <td><%= sub.position %></td>
-          <td><%= status_tag(sub.visible) %></td>
-          <td><%= sub.permalink %></td>
-          <td><%= link_to("Show", {:action => 'show', :id => sub.id}, :class => "action show") %></td>
-          <td><%= link_to("Edit", {:action => 'edit', :id => sub.id}, :class => "action edit") %></td>
-          <td><%= link_to("Delete", {:action => 'delete', :id => sub.id}, :class => "action delete") %></td>
+          <td><%= page.subject.name if page.subject %></td>
+          <th scope="row"><%= page.name %></th>
+          <td><%= page.position %></td>
+          <td><%= status_tag(page.visible) %></td>
+          <td><%= page.permalink %></td>
+          <td><%= link_to("Show", {:action => 'show', :id => page.id}, :class => "action show") %></td>
+          <td><%= link_to("Edit", {:action => 'edit', :id => page.id}, :class => "action edit") %></td>
+          <td><%= link_to("Delete", {:action => 'delete', :id => page.id}, :class => "action delete") %></td>
         </tr>
     <% end %>
   </tbody>
