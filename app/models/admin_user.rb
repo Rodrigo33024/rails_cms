@@ -20,4 +20,10 @@ class AdminUser < ActiveRecord::Base
   validates_format_of :email, :with => EMAIL_REGEX
   validates_confirmation_of :email
 
+  def name
+    return "#{self.first_name} #{self.last_name}"
+  end
+
+
+  scope :sorted, lambda { order("admin_users.last_name ASC, admin_users.first_name ASC") }
 end

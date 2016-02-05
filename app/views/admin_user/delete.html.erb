@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-faded">
+  <h4>Delete Admin User</h4>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+
+<div class="row">
+  <h4>Delete Admin User</h4>
+
+<%= form_for(:adminUser, :url => {:action => 'destroy', :id => @adminUser.id }) do |f| %>
+  <p>Are you sure you want to permanently delete this subject?</p>
+  <p><%= @adminUser.name %></p>
+  <fieldset class="form-group">
+       <%= submit_tag("Delete Admin User", class: "btn btn-danger")%>
+   </fieldset>
+
+<% end %>
+
+</div>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-faded">
+  <h4>Admin User Edit</h4>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+
+<div class="row">
+  <h4>Edit Admin User</h4>
+
+<%= form_for(:adminUser, :url => {:action => 'update', :id => @adminUser.id }) do |f| %>
+    <%= render(:partial =>"form", :locals => {:f => f}) %>
+    <%= submit_tag("Edit Admin User", class: "btn btn-primary")%>
+<% end %>
+
+</div>

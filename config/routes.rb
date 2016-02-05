@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "sections#index"
+  root "access#index"
 
   get 'admin', :to => "access#index"
 

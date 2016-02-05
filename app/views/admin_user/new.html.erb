@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-faded">
+  <h4>New Admin User</h4>
+</nav>
+
+<p style="margin: 20px 0">
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+</p>
+
+
+<div class="row">
+  <h4>Create a New Admin</h4>
+
+  <%= form_for(:adminUser, :url => {:action => 'create'}) do |f| %>
+      <%= render(:partial =>"form", :locals => {:f => f}) %>
+    <%= submit_tag("Create a New Admin", class: "btn btn-primary")%>
+  <% end %>
+
+</div>
