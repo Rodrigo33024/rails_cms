@@ -2,7 +2,9 @@
 <nav class="navbar navbar-light bg-faded">
   <h3>Subjects</h3>
 </nav>
-
+<div>
+  <%= link_to("<< Back to Admin Area", {:controller => 'access', :action => 'index'}, :class => "btn btn-secondary action new") %>
+</div>
 <div>
   <%= link_to("Add New Subject", {:action => 'new'}, :class => "btn btn-secondary action new") %>
 </div>
@@ -32,6 +34,7 @@
           <td><%= subject.position %></td>
           <td><%= status_tag(subject.visible) %></td>
           <td><%= subject.pages.size %></td>
+          <td><%= link_to("View Pages", {:controller => 'pages', :subject_id => subject.id}, :class => "action show") %></td>
           <td><%= link_to("Show", {:action => 'show', :id => subject.id}, :class => "action show") %></td>
           <td><%= link_to("Edit", {:action => 'edit', :id => subject.id}, :class => "action edit") %></td>
           <td><%= link_to("Delete", {:action => 'delete', :id => subject.id}, :class => "action delete") %></td>

@@ -1,9 +1,11 @@
 <nav class="navbar navbar-light bg-faded">
   <h3>Pages</h3>
 </nav>
-
 <div>
-  <%= link_to("Add New Page", {:action => 'new'}, :class => "btn btn-secondary action new") %>
+  <%= link_to("<< Back to Subject", {:controller => 'subjects', :action => 'index'}, :class => "btn btn-secondary action new") %>
+</div>
+<div>
+  <%= link_to("Add New Page", {:action => 'new', :subject_id => @subject.id}, :class => "btn btn-secondary action new") %>
 </div>
 
 <table class="table">
@@ -27,9 +29,9 @@
           <td><%= page.position %></td>
           <td><%= status_tag(page.visible) %></td>
           <td><%= page.permalink %></td>
-          <td><%= link_to("Show", {:action => 'show', :id => page.id}, :class => "action show") %></td>
-          <td><%= link_to("Edit", {:action => 'edit', :id => page.id}, :class => "action edit") %></td>
-          <td><%= link_to("Delete", {:action => 'delete', :id => page.id}, :class => "action delete") %></td>
+          <td><%= link_to("Show", {:action => 'show', :id => page.id, :subject_id => @subject.id}, :class => "action show") %></td>
+          <td><%= link_to("Edit", {:action => 'edit', :id => page.id, :subject_id => @subject.id}, :class => "action edit") %></td>
+          <td><%= link_to("Delete", {:action => 'delete', :id => page.id, :subject_id => @subject.id}, :class => "action delete") %></td>
         </tr>
     <% end %>
   </tbody>

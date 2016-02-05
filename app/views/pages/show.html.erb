@@ -1,6 +1,6 @@
 <h1>Pages show</h1>
 <div>
-  <%= link_to("<< Back to List", {:action => 'index'}, :class => "btn btn-secondary action new") %>
+  <%= link_to("<< Back to List", {:action => 'index', :subject_id => @subject.id}, :class => "btn btn-secondary action new") %>
 </div>
 
 <table class="table">
