@@ -3,14 +3,14 @@
 </nav>
 
 <p style="margin: 20px 0">
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-secondary back-link') %>
+<%= link_to("<< Back to List", {:action => 'index', :page_id => @page.id }, :class => 'btn btn-secondary back-link') %>
 </p>
 
 
 <div class="row">
-  <h4>Edit a Page</h4>
+  <h4>Edit a Section</h4>
 
-<%= form_for(:section, :url => {:action => 'update', :id => @section.id }) do |f| %>
+<%= form_for(:section, :url => {:action => 'update', :id => @section.id, :page_id => @page.id}) do |f| %>
     <%= render(:partial =>"form", :locals => {:f => f}) %>
     <%= submit_tag("Create Sections", class: "btn btn-primary")%>
 <% end %>

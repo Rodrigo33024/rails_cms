@@ -1,12 +1,13 @@
 <h1>Section show</h1>
 <div>
-  <%= link_to("<< Back to List", {:action => 'index'}, :class => "btn btn-secondary action new") %>
+  <%= link_to("<< Back to List", {:action => 'index', :page_id => @page.id}, :class => "btn btn-secondary action new") %>
 </div>
 
 <table class="table">
   <thead>
     <tr>
       <th>Name</th>
+      <th>Page ID</th>
       <th>Position</th>
       <th>Visible</th>
       <th>Content Type</th>
@@ -18,6 +19,7 @@
   <tbody>
         <tr>
           <th scope="row"><%= @section.name %></th>
+          <td><%= @section.page_id %></td>
           <td><%= @section.position %></td>
           <td><%= @section.visible %></td>
           <td><%= @section.content_type %></td>

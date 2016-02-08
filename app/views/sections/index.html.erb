@@ -4,7 +4,11 @@
 </nav>
 
 <div>
-  <%= link_to("Add New Section", {:action => 'new'}, :class => "btn btn-secondary action new") %>
+  <%= link_to("<< Back to Pages", {:controller => 'pages', :action => 'index', :subject_id => @page.subject_id}, :class => "btn btn-secondary action new") %>
+</div>
+
+<div>
+  <%= link_to("Add New Section", {:action => 'new', :page_id => @page.id, :page_id => @page.id}, :class => "btn btn-secondary action new") %>
 </div>
 
 <table class="table">
@@ -24,13 +28,14 @@
     <% @sections.each do |section| %>
         <tr>
           <td><%= section.page_id %></td>
+            <td><%= section.page.name if section.page %></td>
           <td><%= section.name %></td>
           <td><%= section.position %></td>
           <td><%= status_tag(section.visible) %></td>
           <td><%= section.content_type %></td>
-          <td><%= link_to("Show", {:action => 'show', :id => section.id}, :class => "action show") %></td>
-          <td><%= link_to("Edit", {:action => 'edit', :id => section.id}, :class => "action edit") %></td>
-          <td><%= link_to("Delete", {:action => 'delete', :id => section.id}, :class => "action delete") %></td>
+          <td><%= link_to("Show", {:action => 'show', :id => section.id, :page_id => @page.id}, :class => "action show") %></td>
+          <td><%= link_to("Edit", {:action => 'edit', :id => section.id, :page_id => @page.id}, :class => "action edit") %></td>
+          <td><%= link_to("Delete", {:action => 'delete', :id => section.id, :page_id => @page.id}, :class => "action delete") %></td>
         </tr>
     <% end %>
   </tbody>

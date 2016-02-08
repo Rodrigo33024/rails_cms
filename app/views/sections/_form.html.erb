@@ -1,26 +1,32 @@
-<%= error_message_for(@section) %>
-<fieldset class="form-group">
-  <%= f.label(:page_id, "Page ID:") %>
-  <%= f.text_field(:page_id, class: 'form-control') %>
-</fieldset>
-<fieldset class="form-group">
-  <%= f.label(:name, "Name:") %>
-  <%= f.text_field(:name, class: 'form-control') %>
-</fieldset>
-<fieldset class="form-group">
-  <%= f.label(:position, "Position:") %>
-  <%= f.text_field(:position, class: 'form-control') %>
-</fieldset>
-<fieldset class="form-group">
-  <%= f.label(:visible, "Visible:") %>
-  <%= f.check_box(:visible, class: 'form-control') %>
-</fieldset>
-<fieldset class="form-group">
-  <%= f.label(:content_type, "Content Type:") %>
-  <%= f.radio_button(:content_type, 'text') %> Text
-  <%= f.radio_button(:content_type, 'HTML') %> HTML
-</fieldset>
-<fieldset class="form-group">
-  <%= f.label(:content, "Content:") %>
-  <%= f.text_area(:content, class: 'form-control', :size => '40x10') %>
-</fieldset>
+<%= error_message_for(@page) %>
+
+<table summary="Section form fields">
+  <tr>
+    <th><%= f.label(:page_id, "Page") %></th>
+    <td><%= f.select(:page_id, @pages.collect {|p| [p.name, p.id]}) %>
+</td>
+  </tr>
+  <tr>
+    <th><%= f.label(:name) %></th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@section_count) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible) %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:content_type) %></th>
+    <td>
+      <%= f.radio_button(:content_type, 'text') %> Text
+      <%= f.radio_button(:content_type, 'HTML') %> HTML
+    </td>
+  </tr>
+  <tr>
+    <th><%= f.label(:content) %></th>
+    <td><%= f.text_area(:content, :size => '40x10') %></td>
+  </tr>
+</table>
